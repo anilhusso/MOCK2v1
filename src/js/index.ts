@@ -1,12 +1,17 @@
-interface Person {
-    firstName: string;
-    lastName: string;
-}
-
-function greeter(person: Person): string {
-    return "Hello, " + person.firstName + " " + person.lastName;
-}
-let user: Person = { firstName: "John", lastName: "Doe" };
-
-let element: HTMLDivElement = <HTMLDivElement> document.getElementById("content");
-element.innerHTML = greeter(user);
+import axios,{
+    AxiosResponse,
+    AxiosError
+  } from "../../node_modules/axios/index"
+  import { Icoin} from "./coins";
+  let Contentelement: HTMLDivElement = <HTMLDivElement> document.getElementById("content");
+  let GetAllCoinsButton :HTMLButtonElement = <HTMLButtonElement> document.getElementById("GetAllButton")
+  
+  GetAllCoinsButton.addEventListener('click', showAllcoins)
+  
+  let AddcoinsButton: HTMLButtonElement = <HTMLButtonElement> document.getElementById("addbutton")
+  AddcoinsButton.addEventListener("click", addcoin);
+  function addcoin(): void{
+      let addcoinselement: HTMLInputElement = <HTMLInputElement> document.getElementById("addcoin");
+          let mycoin: string = addcoinselement.value;
+          let mybud: int = addbudelement.value;
+          let mynavn: string = addnavnelement.value;
